@@ -80,7 +80,7 @@ class MarkSeries extends AbstractSeries {
             onMouseOut: e => this._valueMouseOutHandler(d, e)
           };
 
-          if (typeof markType === 'function') {
+          if (markType) {
             return markType({attrs: {...attrs, size, x, y}, d});
           }
           return <circle {...attrs} cx={x} cy={y} r={size} />;
